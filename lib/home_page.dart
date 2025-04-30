@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                     return Card(
                       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                       child: ListTile(
-                        
+                                   
                         subtitle: Text('Card: ${card.cardNumber}'),
                         trailing: IconButton(
                           icon: const Icon(Icons.delete, color: Colors.red),

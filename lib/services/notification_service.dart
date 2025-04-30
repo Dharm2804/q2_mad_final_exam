@@ -72,9 +72,9 @@ class NotificationService {
     'Card Expiring Soon',
     'Your ${card.storeName} card expires on ${expiryDate.toLocal().toString().split(' ')[0]}',
     tz.TZDateTime.from(notificationDate, tz.local),
-    const NotificationDetails(
+    const NotificationDetails(     
       android: AndroidNotificationDetails(
-        'card_expiry_channel',
+        'card_expiry_channel',     
         'Card Expiry Notifications',
         importance: Importance.max,
         priority: Priority.high,

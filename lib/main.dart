@@ -162,7 +162,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               end: const Offset(1.0, 1.0),
               duration: const Duration(milliseconds: 800),
               curve: Curves.elasticOut,
-            )
+            )      
             .then()
             .shimmer(
               duration: const Duration(milliseconds: 1200),
