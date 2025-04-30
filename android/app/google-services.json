@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "76670726526",
+    "project_id": "finalexam-ba340",
+    "storage_bucket": "finalexam-ba340.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76670726526:android:bf848d8aad2235209a832f",
+        "android_client_info": {
+          "package_name": "com.example.final_exam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXWYibnaCiD7D3NTKOzWgVvB1gO6nULkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
