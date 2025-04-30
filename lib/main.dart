@@ -1,4 +1,6 @@
+import 'package:final_exam/add_card_page.dart';
 import 'package:final_exam/home_page.dart';
+import 'package:final_exam/models/loyalty_card.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,9 +8,13 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+    WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(LoyaltyCardAdapter());
+  await Hive.openBox<LoyaltyCard>('loyaltyCards');
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
@@ -19,7 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Auth App',
+      title: 'Loyalty Card App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -67,12 +73,13 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const SplashScreen(),
+      home: const HomePage(), // Adjusted for simplicity; replace with SplashScreen or AuthWrapper as needed
       routes: {
         '/login': (context) => const LoginPage(),
         '/register': (context) => const RegisterPage(),
         '/home': (context) => const HomePage(),
         '/auth': (context) => const AuthWrapper(),
+        '/add_card': (context) => const AddCardPage(),
       },
     );
   }
